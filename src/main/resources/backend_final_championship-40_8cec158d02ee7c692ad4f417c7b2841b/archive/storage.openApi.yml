@@ -1,0 +1,79 @@
+openapi: '3.0.2'
+info:
+  title: Storage API
+  version: '1.0'
+paths:
+  /{key}:
+    get:
+      summary: Получить значение по ключу
+      operationId: getValue
+      parameters:
+        - $ref: '#/components/parameters/key'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: string
+        '404':
+          description: Значение не найдено в хранилище
+          content:
+            text/plain:
+              schema:
+                type: string
+        '400':
+          description: Некорректный запрос или URL
+          content:
+            text/plain:
+              schema:
+                type: string
+        '502':
+          description: Кэш недоступен
+          content:
+            text/plain:
+              schema:
+                type: string
+
+    put:
+      summary: Сохранить значение в хранилище (метод доступен только для кэшей)
+      operationId: saveValue
+      parameters:
+        - $ref: '#/components/parameters/key'
+      requestBody:
+        description: Строчное представление данных в хранилище
+        required: true
+        content:
+          text/plain:
+            schema:
+              type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: string
+        '400':
+          description: Некорректный или пустой запрос или некорректный URL
+          content:
+            text/plain:
+              schema:
+                type: string
+        '502':
+          description: Кэш недоступен
+          content:
+            text/plain:
+              schema:
+                type: string
+
+components:
+  parameters:
+    key:
+      name: key
+      in: path
+      description: Уникальный ключ
+      required: true
+      schema:
+        type: string
+        pattern: \w+

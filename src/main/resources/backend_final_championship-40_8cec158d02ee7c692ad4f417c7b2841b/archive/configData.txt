@@ -1,0 +1,7 @@
+{
+  "db_url": "http://localhost:80/db/",
+  "cache_urls": [
+    "http://localhost:80/cache/1/",
+    "http://localhost:80/cache/2/"
+  ]
+}

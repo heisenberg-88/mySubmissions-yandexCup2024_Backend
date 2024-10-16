@@ -1,0 +1,46 @@
+{
+	"info": {
+		"_postman_id": "0abcedc8-59fb-44d0-b011-45a8e5b93791",
+		"name": "YandexCup2024Backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "34323211"
+	},
+	"item": [
+		{
+			"name": "dbGet",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:80/db/Negb-HDPE-vHBn"
+			},
+			"response": []
+		},
+		{
+			"name": "cacheGet",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:80/cache/1/Negb-HDPE-vHBn"
+			},
+			"response": []
+		},
+		{
+			"name": "cacahePut",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"2qsMMSI2Uc\": \"7VSQj-i2WJR-HcmRw-IPB0J\",\r\n    \"EAhfFef36b\": \"oTiyA-c3nMS-FpFDB-skyiQ\",\r\n    \"hsvZ39JOkH\": \"GXjg8-PcZp7-ZfErO-40JPv\",\r\n    \"hV0MPamSET\": \"lSSJ7-Me1ZV-iQLSr-wUtxq\",\r\n    \"cOjPpVpTCT\": \"oXnY5-V37WH-QvlGc-7Ivji\",\r\n    \"id\": \"Negb-HDPE-vHBn\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:80/cache/1/Negb-HDPE-vHBn"
+			},
+			"response": []
+		}
+	]
+}
